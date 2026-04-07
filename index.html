@@ -7,6 +7,25 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div id="timer" style="font-size:50px; color:#38bdf8; text-align:center; margin-top:50px;">30</div>
+<div id="code" style="font-size:40px; color:#22c55e; text-align:center; display:none; margin-top:20px;">Code: 1998</div>
+
+<script>
+  let timeLeft = 30;
+  const timer = document.getElementById("timer");
+  const code = document.getElementById("code");
+
+  const countdown = setInterval(() => {
+    timeLeft--;
+    timer.textContent = timeLeft;
+
+    if (timeLeft <= 0) {
+      clearInterval(countdown);
+      timer.style.display = "none";
+      code.style.display = "block";
+    }
+  }, 1000);
+</script>
   <h1>Welcome </h1>
   <div id="products"></div>
 <script>
